@@ -6,7 +6,7 @@ module.exports = function getZerosCount(number, base) {
   let x=base;
   if (x<4){prNum=x;}
   if (!(x & (x-1))) {d=2}
-   while (!(x & 1)) {x /= 2}
+  else { while (!(x & 1)) {x /= 2}
     d=3;
     while (x>1) {
     while (!(x%d)){
@@ -15,6 +15,7 @@ module.exports = function getZerosCount(number, base) {
     d+=2;
   }
   d=d-2;
+  }
   prNum=d;
   for (let i = d ; number / i >= 1; i *= d){
     zerosCount += Math.floor(number / i);
